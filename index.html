@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学習支援・英語・日本語 | 7年間の実績</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FDF8F2;
+  --cream2:#F5EFE6;
+  --teal:#1D5C52;
+  --teal-light:#2A7A6B;
+  --teal-pale:#E8F3F1;
+  --amber:#B87514;
+  --amber-light:#F5A623;
+  --amber-pale:#FEF3DC;
+  --text:#2A1F14;
+  --text-mid:#5A4A3A;
+  --text-light:#8A7A6A;
+  --white:#FFFFFF;
+  --radius:12px;
+  --shadow:0 4px 24px rgba(29,92,82,.10);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.8;
+  font-size:16px;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(253,248,242,.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(184,117,20,.15);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.nav-logo{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--teal);
+  letter-spacing:.05em;
+}
+.nav-logo span{color:var(--amber)}
+.nav-cta{
+  background:var(--teal);color:var(--white);
+  padding:10px 22px;border-radius:50px;
+  font-size:.85rem;font-weight:700;
+  letter-spacing:.05em;
+  transition:background .2s;
+}
+.nav-cta:hover{background:var(--teal-light)}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  padding:100px 5% 80px;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:flex-start;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;top:0;right:0;
+  width:55%;height:100%;
+  background:linear-gradient(135deg,var(--teal-pale) 0%,var(--amber-pale) 100%);
+  clip-path:polygon(15% 0,100% 0,100% 100%,0 100%);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber-pale);
+  border:1.5px solid var(--amber-light);
+  border-radius:50px;
+  padding:6px 18px;
+  font-size:.8rem;font-weight:700;
+  color:var(--amber);
+  margin-bottom:28px;
+  letter-spacing:.08em;
+}
+.hero-badge::before{
+  content:'';width:8px;height:8px;
+  background:var(--amber-light);
+  border-radius:50%;
+  flex-shrink:0;
+}
+.hero h1{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(2rem,4.5vw,3.2rem);
+  font-weight:700;
+  line-height:1.5;
+  color:var(--text);
+  max-width:600px;
+  margin-bottom:16px;
+  position:relative;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--teal);
+  position:relative;
+}
+.hero h1 em::after{
+  content:'';
+  position:absolute;bottom:2px;left:0;right:0;
+  height:3px;background:var(--amber-light);
+  border-radius:2px;
+}
+.hero-sub{
+  font-size:1.05rem;
+  color:var(--text-mid);
+  max-width:480px;
+  margin-bottom:36px;
+  line-height:1.9;
+  position:relative;
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;position:relative}
+.btn-primary{
+  background:var(--teal);color:var(--white);
+  padding:16px 36px;border-radius:50px;
+  font-size:1rem;font-weight:700;
+  letter-spacing:.05em;
+  box-shadow:0 6px 20px rgba(29,92,82,.3);
+  transition:transform .2s,box-shadow .2s;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(29,92,82,.35)}
+.btn-primary::after{content:'→';font-size:1.1em}
+.btn-secondary{
+  background:transparent;
+  border:1.5px solid var(--teal);
+  color:var(--teal);
+  padding:16px 28px;border-radius:50px;
+  font-size:.95rem;font-weight:700;
+  letter-spacing:.05em;
+  transition:background .2s,color .2s;
+}
+.btn-secondary:hover{background:var(--teal);color:var(--white)}
+.hero-stats{
+  display:flex;gap:36px;
+  margin-top:48px;
+  position:relative;
+}
+.hero-stat{text-align:center}
+.hero-stat-num{
+  font-family:'Noto Serif JP',serif;
+  font-size:2.2rem;font-weight:700;
+  color:var(--teal);line-height:1;
+  display:block;
+}
+.hero-stat-num sup{font-size:1.1rem}
+.hero-stat-label{
+  font-size:.75rem;color:var(--text-light);
+  letter-spacing:.05em;margin-top:4px;
+  display:block;
+}
+.hero-divider{
+  width:1px;background:rgba(184,117,20,.25);align-self:stretch
+}
+
+/* ===== SECTION BASE ===== */
+section{padding:80px 5%}
+.section-label{
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.15em;
+  color:var(--amber);
+  text-transform:uppercase;
+  margin-bottom:12px;
+  display:block;
+}
+.section-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  font-weight:700;
+  line-height:1.5;
+  margin-bottom:16px;
+}
+.section-desc{
+  color:var(--text-mid);
+  max-width:540px;
+  line-height:1.9;
+  font-size:.95rem;
+  margin-bottom:48px;
+}
+.center{text-align:center}
+.section-desc.center{margin-left:auto;margin-right:auto}
+
+/* ===== PAIN POINTS ===== */
+.pain-section{background:var(--teal);color:var(--white)}
+.pain-section .section-label{color:rgba(245,166,35,.8)}
+.pain-section .section-title{color:var(--white)}
+.pain-section .section-desc{color:rgba(255,255,255,.75);max-width:600px}
+.pain-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.pain-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--radius);
+  padding:24px 22px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.pain-icon{
+  font-size:1.5rem;flex-shrink:0;
+  width:42px;height:42px;
+  background:rgba(245,166,35,.2);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+}
+.pain-text{font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.7}
+.pain-cta{
+  margin-top:44px;
+  text-align:center;
+}
+.pain-answer{
+  display:inline-block;
+  background:var(--amber-pale);
+  color:var(--teal);
+  padding:16px 32px;
+  border-radius:var(--radius);
+  font-size:.95rem;font-weight:700;
+  border:2px solid var(--amber-light);
+}
+
+/* ===== SERVICES ===== */
+.services-section{background:var(--white)}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+}
+.service-card{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(29,92,82,.1);
+  box-shadow:var(--shadow);
+  transition:transform .3s;
+}
+.service-card:hover{transform:translateY(-4px)}
+.service-card-header{
+  padding:32px 28px 24px;
+  position:relative;
+}
+.service-card.english .service-card-header{background:linear-gradient(135deg,#1D5C52,#2A7A6B)}
+.service-card.japanese .service-card-header{background:linear-gradient(135deg,#7B3A1A,#B55A30)}
+.service-tag{
+  display:inline-block;
+  padding:4px 14px;border-radius:20px;
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  background:rgba(255,255,255,.2);color:rgba(255,255,255,.9);
+  margin-bottom:14px;
+}
+.service-card-header h3{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.5rem;font-weight:700;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.service-card-header p{
+  font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.7
+}
+.service-card-body{
+  padding:24px 28px;
+  background:var(--white);
+}
+.service-list{list-style:none}
+.service-list li{
+  padding:10px 0;
+  border-bottom:1px solid rgba(29,92,82,.06);
+  font-size:.9rem;color:var(--text-mid);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.service-list li:last-child{border-bottom:none}
+.service-list li::before{
+  content:'✓';
+  color:var(--teal);
+  font-weight:700;
+  flex-shrink:0;
+  margin-top:2px;
+}
+
+/* ===== FEATURES ===== */
+.features-section{background:var(--cream2)}
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+.feature-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  border:1px solid rgba(29,92,82,.08);
+  box-shadow:0 2px 12px rgba(29,92,82,.06);
+  position:relative;
+  overflow:hidden;
+}
+.feature-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--teal);
+}
+.feature-num{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;font-weight:700;
+  color:rgba(29,92,82,.08);
+  line-height:1;
+  position:absolute;top:16px;right:20px;
+}
+.feature-icon-wrap{
+  width:48px;height:48px;
+  background:var(--teal-pale);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;
+  margin-bottom:16px;
+}
+.feature-card h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--teal);
+  margin-bottom:8px;
+}
+.feature-card p{font-size:.85rem;color:var(--text-mid);line-height:1.8}
+
+/* ===== TRACK RECORD ===== */
+.record-section{
+  background:var(--amber-pale);
+  border-top:1px solid rgba(184,117,20,.15);
+  border-bottom:1px solid rgba(184,117,20,.15);
+}
+.record-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:24px;
+  text-align:center;
+}
+.record-card{
+  padding:32px 16px;
+}
+.record-num{
+  font-family:'Noto Serif JP',serif;
+  font-size:3rem;font-weight:700;
+  color:var(--teal);
+  line-height:1;
+  display:block;
+}
+.record-num span{font-size:1.5rem}
+.record-label{
+  font-size:.8rem;color:var(--text-mid);
+  margin-top:8px;line-height:1.6;
+}
+.record-divider{
+  width:1px;background:rgba(184,117,20,.25);
+  align-self:stretch;margin:16px 0;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section{background:var(--white)}
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+.testi-card{
+  background:var(--cream);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  border:1px solid rgba(29,92,82,.08);
+  position:relative;
+}
+.testi-card::before{
+  content:'"';
+  position:absolute;top:12px;left:18px;
+  font-family:'Playfair Display',serif;
+  font-size:4rem;color:rgba(29,92,82,.1);
+  line-height:1;
+}
+.testi-stars{
+  color:var(--amber-light);
+  font-size:.9rem;
+  margin-bottom:12px;
+}
+.testi-text{
+  font-size:.9rem;color:var(--text-mid);
+  line-height:1.9;margin-bottom:16px;
+}
+.testi-name{
+  font-size:.8rem;font-weight:700;
+  color:var(--teal);
+}
+.testi-note{
+  font-size:.75rem;color:var(--text-light);
+  margin-top:4px;
+}
+
+/* ===== PRICING ===== */
+.pricing-section{background:var(--teal)}
+.pricing-section .section-title,.pricing-section .section-label{color:var(--white)}
+.pricing-section .section-desc{color:rgba(255,255,255,.7);max-width:560px}
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.pricing-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:16px;
+  padding:32px 28px;
+  transition:transform .3s;
+}
+.pricing-card:hover{transform:translateY(-4px)}
+.pricing-card.featured{
+  background:var(--white);
+  border-color:var(--amber-light);
+  position:relative;
+}
+.pricing-popular{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--amber-light);color:var(--white);
+  padding:5px 18px;border-radius:20px;
+  font-size:.75rem;font-weight:700;letter-spacing:.08em;
+  white-space:nowrap;
+}
+.pricing-name{
+  font-size:.8rem;font-weight:700;letter-spacing:.12em;
+  color:rgba(255,255,255,.6);
+  margin-bottom:8px;
+}
+.pricing-card.featured .pricing-name{color:var(--amber)}
+.pricing-price{
+  font-family:'Noto Serif JP',serif;
+  font-size:2rem;font-weight:700;
+  color:var(--white);
+  margin-bottom:4px;
+}
+.pricing-card.featured .pricing-price{color:var(--teal)}
+.pricing-freq{
+  font-size:.8rem;color:rgba(255,255,255,.5);
+  margin-bottom:20px;
+}
+.pricing-card.featured .pricing-freq{color:var(--text-light)}
+.pricing-list{list-style:none;margin-bottom:28px}
+.pricing-list li{
+  font-size:.85rem;
+  color:rgba(255,255,255,.8);
+  padding:6px 0;
+  display:flex;gap:8px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.pricing-list li:last-child{border-bottom:none}
+.pricing-card.featured .pricing-list li{color:var(--text-mid)}
+.pricing-list li::before{content:'✓';color:var(--amber-light);font-weight:700;flex-shrink:0}
+.pricing-btn{
+  display:block;text-align:center;
+  padding:13px 24px;border-radius:50px;
+  font-size:.9rem;font-weight:700;letter-spacing:.05em;
+  border:1.5px solid rgba(255,255,255,.3);
+  color:var(--white);
+  transition:background .2s,border-color .2s;
+}
+.pricing-btn:hover{background:rgba(255,255,255,.15)}
+.pricing-card.featured .pricing-btn{
+  background:var(--teal);color:var(--white);
+  border-color:var(--teal);
+  box-shadow:0 4px 16px rgba(29,92,82,.3);
+}
+.pricing-btn::after{content:' →'}
+.pricing-note{
+  text-align:center;margin-top:32px;
+  font-size:.8rem;color:rgba(255,255,255,.5);
+}
+
+/* ===== FAQ ===== */
+.faq-section{background:var(--cream2)}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{
+  background:var(--white);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+  border:1px solid rgba(29,92,82,.08);
+  overflow:hidden;
+}
+.faq-q{
+  padding:20px 24px;
+  font-size:.95rem;font-weight:700;
+  color:var(--text);
+  cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;
+  user-select:none;
+}
+.faq-q::after{
+  content:'+';
+  font-size:1.4rem;font-weight:400;
+  color:var(--teal);flex-shrink:0;
+  transition:transform .3s;
+}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+  font-size:.9rem;color:var(--text-mid);
+  line-height:1.9;padding:0 24px;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+
+/* ===== CTA ===== */
+.cta-section{
+  background:linear-gradient(135deg,var(--teal) 0%,#0F3D35 100%);
+  text-align:center;
+  padding:100px 5%;
+}
+.cta-section .section-label{color:rgba(245,166,35,.8)}
+.cta-section .section-title{color:var(--white);max-width:520px;margin:0 auto 16px}
+.cta-section p{color:rgba(255,255,255,.7);max-width:460px;margin:0 auto 40px;font-size:.95rem}
+.cta-form-link{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--amber-light);
+  color:var(--white);
+  padding:20px 48px;
+  border-radius:50px;
+  font-size:1.1rem;font-weight:700;
+  letter-spacing:.05em;
+  box-shadow:0 8px 28px rgba(245,166,35,.4);
+  transition:transform .2s,box-shadow .2s;
+}
+.cta-form-link:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(245,166,35,.45)}
+.cta-form-link::after{content:'→';font-size:1.2em}
+.cta-note{
+  margin-top:24px;
+  font-size:.8rem;color:rgba(255,255,255,.45);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0F2E2A;
+  color:rgba(255,255,255,.5);
+  padding:40px 5%;
+  text-align:center;
+  font-size:.8rem;
+  line-height:2;
+}
+footer .footer-logo{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.1rem;font-weight:700;
+  color:rgba(255,255,255,.8);
+  margin-bottom:12px;
+}
+footer .footer-logo span{color:var(--amber-light)}
+
+/* ===== SCROLL ANIMATION ===== */
+.fade-up{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.fade-up.visible{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:700px){
+  .hero-bg{width:100%;clip-path:none;opacity:.3;z-index:0}
+  .hero>*{position:relative;z-index:1}
+  .hero-stats{gap:20px}
+  .hero-stat-num{font-size:1.7rem}
+  nav .nav-cta{padding:8px 16px;font-size:.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">まなび<span>サポート</span></div>
+  <a href="#contact" class="nav-cta">無料相談・お申し込み</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-badge">7年間・口コミのみで継続中</div>
+  <h1>お子さまの<em>「わかった！」</em>を<br>一緒に増やしていきます</h1>
+  <p class="hero-sub">
+    英語・日本語の学習支援を、個別・丁寧に。<br>
+    お子さまのペースに合わせた指導で、<br>
+    確かな学力と自信を育てます。
+  </p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">無料相談・お申し込み</a>
+    <a href="#services" class="btn-secondary">サービス内容を見る</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">7<sup>年</sup></span>
+      <span class="hero-stat-label">指導歴</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">100<sup>%</sup></span>
+      <span class="hero-stat-label">口コミで継続</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">個別</span>
+      <span class="hero-stat-label">マンツーマン対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section" id="pain">
+  <div class="center fade-up">
+    <span class="section-label">お子さまのご状況</span>
+    <h2 class="section-title">こんなお悩みはありませんか？</h2>
+    <p class="section-desc center" style="color:rgba(255,255,255,.7)">
+      多くの保護者様から、こういったご相談をいただいています。
+    </p>
+  </div>
+  <div class="pain-grid fade-up">
+    <div class="pain-card">
+      <div class="pain-icon">📚</div>
+      <p class="pain-text">学校の授業についていけず、テストの点が下がってきた</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🗣️</div>
+      <p class="pain-text">英語が苦手で、発音や読み書きに自信が持てない</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📝</div>
+      <p class="pain-text">文章の読み取りや作文が苦手で、国語力が心配</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">💭</div>
+      <p class="pain-text">集団塾では質問できず、理解できないまま進んでしまう</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🌍</div>
+      <p class="pain-text">帰国子女・バイリンガルで、どちらの言語も中途半端になっている</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">⏰</div>
+      <p class="pain-text">忙しくて子どもの勉強を見てあげられない</p>
+    </div>
+  </div>
+  <div class="pain-cta fade-up">
+    <p class="pain-answer">✨ ひとつでも当てはまる方は、ぜひご相談ください</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="center fade-up">
+    <span class="section-label">Services</span>
+    <h2 class="section-title">サービス内容</h2>
+    <p class="section-desc center">英語・日本語の両面から、お子さまの学習をサポートします。</p>
+  </div>
+  <div class="service-grid fade-up">
+    <div class="service-card english">
+      <div class="service-card-header">
+        <span class="service-tag">English</span>
+        <h3>英語学習サポート</h3>
+        <p>楽しく、確実に英語力を伸ばします。初めての方から上級者まで対応。</p>
+      </div>
+      <div class="service-card-body">
+        <ul class="service-list">
+          <li>フォニックスから始める読み書き指導</li>
+          <li>英会話・リスニング・スピーキング</li>
+          <li>英検・学校定期テスト対策</li>
+          <li>帰国子女の英語力維持・向上</li>
+          <li>英文法・長文読解</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-card japanese">
+      <div class="service-card-header">
+        <span class="service-tag">日本語</span>
+        <h3>日本語学習サポート</h3>
+        <p>読む・書く・聞く・話すの4技能をバランスよく育てます。</p>
+      </div>
+      <div class="service-card-body">
+        <ul class="service-list">
+          <li>読解力・語彙力の強化</li>
+          <li>作文・記述問題の指導</li>
+          <li>漢字・文法・古典サポート</li>
+          <li>定期テスト・入試対策</li>
+          <li>外国籍・海外在住のお子さまの日本語</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="fade-up">
+    <span class="section-label">Why choose us</span>
+    <h2 class="section-title">選ばれる4つの理由</h2>
+    <p class="section-desc">7年間、ご紹介だけで続けてこられた理由がここにあります。</p>
+  </div>
+  <div class="features-grid fade-up">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <div class="feature-icon-wrap">🎯</div>
+      <h4>完全オーダーメイドの指導</h4>
+      <p>お子さまの理解度・目標・個性に合わせてカリキュラムを一から設計。「みんな同じ」は使いません。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <div class="feature-icon-wrap">💬</div>
+      <h4>保護者様との丁寧な連携</h4>
+      <p>毎回の授業後に進捗をご報告。疑問や不安はいつでもご相談いただけます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <div class="feature-icon-wrap">🌱</div>
+      <h4>学力だけでなく自信を育てる</h4>
+      <p>「できた！」という成功体験を積み重ね、自ら学ぶ力と自己肯定感を大切に育てます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">04</div>
+      <div class="feature-icon-wrap">🔒</div>
+      <h4>7年・口コミだけの実績</h4>
+      <p>広告なし、紹介だけで続いてきた信頼。満足していただけているから、ご紹介が続いています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="record-section" id="record">
+  <div class="center fade-up" style="margin-bottom:48px">
+    <span class="section-label">Track Record</span>
+    <h2 class="section-title">7年間の実績</h2>
+  </div>
+  <div class="record-grid fade-up">
+    <div class="record-card">
+      <span class="record-num">7<span>年</span></span>
+      <p class="record-label">個人事業として<br>継続的に運営</p>
+    </div>
+    <div class="record-divider"></div>
+    <div class="record-card">
+      <span class="record-num">100<span>%</span></span>
+      <p class="record-label">ご紹介・口コミ<br>のみで継続</p>
+    </div>
+    <div class="record-divider"></div>
+    <div class="record-card">
+      <span class="record-num">2<span>言語</span></span>
+      <p class="record-label">英語・日本語の<br>バイリンガル指導</p>
+    </div>
+    <div class="record-divider"></div>
+    <div class="record-card">
+      <span class="record-num">個別</span>
+      <p class="record-label">一人ひとりに<br>向き合う指導</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="voice">
+  <div class="center fade-up">
+    <span class="section-label">Voices</span>
+    <h2 class="section-title">保護者様の声</h2>
+    <p class="section-desc center">実際にご利用いただいた保護者様からいただいた声をご紹介します。</p>
+  </div>
+  <div class="testi-grid fade-up">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">英語が大嫌いだった息子が、授業の前日に「明日たのしみ！」と言うようになりました。先生の教え方がとても上手で、親としても安心してお任せできています。</p>
+      <p class="testi-name">小4男の子の保護者様</p>
+      <p class="testi-note">英語サポート・継続2年</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">海外生活が長く、日本語の作文に苦労していました。丁寧に段階を踏んで教えていただき、先日の読書感想文は先生に褒められたと娘が喜んでいました。</p>
+      <p class="testi-name">中1女の子の保護者様</p>
+      <p class="testi-note">日本語サポート・継続1年半</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">毎回授業後にフィードバックをいただけるので、子どもの状況がよくわかります。集団塾では聞けなかった細かい質問もできると息子が言っています。</p>
+      <p class="testi-name">中2男の子の保護者様</p>
+      <p class="testi-note">英語・日本語両方サポート</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="center fade-up">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">料金・コース</h2>
+    <p class="section-desc center">まずは無料相談で、お子さまに最適なプランをご提案します。</p>
+  </div>
+  <div class="pricing-grid fade-up">
+    <div class="pricing-card">
+      <p class="pricing-name">ライトプラン</p>
+      <p class="pricing-price">¥〇〇〇〇</p>
+      <p class="pricing-freq">/ 月（月2回）</p>
+      <ul class="pricing-list">
+        <li>月2回・各60分</li>
+        <li>英語または日本語（選択）</li>
+        <li>授業後フィードバック</li>
+        <li>LINEでの質問対応</li>
+      </ul>
+      <a href="#contact" class="pricing-btn">相談・申し込み</a>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-popular">人気 No.1</div>
+      <p class="pricing-name">スタンダードプラン</p>
+      <p class="pricing-price">¥〇〇〇〇</p>
+      <p class="pricing-freq">/ 月（月4回）</p>
+      <ul class="pricing-list">
+        <li>月4回・各60〜90分</li>
+        <li>英語＋日本語 両方対応</li>
+        <li>授業後フィードバック</li>
+        <li>LINEでの質問対応</li>
+        <li>学習計画の作成・管理</li>
+      </ul>
+      <a href="#contact" class="pricing-btn">相談・申し込み</a>
+    </div>
+    <div class="pricing-card">
+      <p class="pricing-name">集中プラン</p>
+      <p class="pricing-price">¥〇〇〇〇</p>
+      <p class="pricing-freq">/ 月（月8回）</p>
+      <ul class="pricing-list">
+        <li>月8回・各60〜90分</li>
+        <li>英語＋日本語 両方対応</li>
+        <li>授業後フィードバック</li>
+        <li>優先LINEサポート</li>
+        <li>テスト・試験対策を重点的に</li>
+      </ul>
+      <a href="#contact" class="pricing-btn">相談・申し込み</a>
+    </div>
+  </div>
+  <p class="pricing-note fade-up">※料金はカスタマイズ可能です。まずはご相談ください。無料体験授業あり。</p>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="center fade-up">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">よくあるご質問</h2>
+  </div>
+  <div class="faq-list fade-up">
+    <div class="faq-item">
+      <div class="faq-q">対象年齢・学年を教えてください</div>
+      <div class="faq-a">小学生から高校生まで幅広く対応しています。年齢や学年よりも、お子さまの現在の理解度・目標に合わせて指導します。まずはお気軽にご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">オンライン・対面どちらですか？</div>
+      <div class="faq-a">オンライン（Zoom等）・対面どちらにも対応しています。ご希望やお住まいの地域に合わせてご相談させていただきます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">無料体験はありますか？</div>
+      <div class="faq-a">はい、初回は無料体験授業（60分）を実施しています。お子さまの現状確認と、指導方針のすり合わせを行います。お気軽にお申し込みください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">英語と日本語、両方お願いできますか？</div>
+      <div class="faq-a">はい、英語・日本語の両方に対応しています。どちらか一方のみのご受講も可能です。両方ご希望の場合は、スタンダード・集中プランがおすすめです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">帰国子女・バイリンガルの子どもでも対応できますか？</div>
+      <div class="faq-a">はい、帰国子女や海外在住のお子さまの指導も得意としています。英語力の維持・向上や、日本語の読み書き強化など、個々の状況に応じた指導が可能です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">途中でコースを変更できますか？</div>
+      <div class="faq-a">はい、お子さまの状況や目標の変化に合わせていつでも変更・相談いただけます。柔軟に対応しますので、遠慮なくご連絡ください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <span class="section-label fade-up">Contact</span>
+  <h2 class="section-title fade-up">まずは無料相談から<br>はじめてみませんか？</h2>
+  <p class="fade-up">フォームからお申し込みいただくと、2営業日以内にご連絡いたします。お気軽にどうぞ。</p>
+  <a href="https://forms.gle/XXXXXXXXXXXXX" target="_blank" class="cta-form-link fade-up">
+    無料相談・お申し込みフォーム
+  </a>
+  <p class="cta-note fade-up">※ Googleフォームへ移動します ｜ 返信：2営業日以内</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">まなび<span>サポート</span></div>
+  <p>英語・日本語 学習支援 ｜ 個人事業主</p>
+  <p style="margin-top:12px">© 2025 まなびサポート All rights reserved.</p>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+
+// Scroll fade-up
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
